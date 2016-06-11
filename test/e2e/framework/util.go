@@ -62,7 +62,6 @@ import (
 	"k8s.io/kubernetes/pkg/types"
 	"k8s.io/kubernetes/pkg/util"
 	deploymentutil "k8s.io/kubernetes/pkg/util/deployment"
-	labelsutil "k8s.io/kubernetes/pkg/util/labels"
 	"k8s.io/kubernetes/pkg/util/sets"
 	"k8s.io/kubernetes/pkg/util/wait"
 	utilyaml "k8s.io/kubernetes/pkg/util/yaml"
@@ -1597,6 +1596,8 @@ func restclientConfig(kubeContext string) (*clientcmdapi.Config, error) {
 	return c, nil
 }
 
+type ClientConfigGetter func() (*restclient.Config, error)
+
 func LoadConfig() (*restclient.Config, error) {
 	c, err := restclientConfig(TestContext.KubeContext)
 	if err != nil {
@@ -2605,7 +2606,7 @@ func waitListSchedulableNodesOrDie(c *client.Client) *api.NodeList {
 func isNodeSchedulable(node *api.Node) bool {
 	nodeReady := IsNodeConditionSetAsExpected(node, api.NodeReady, true)
 	networkReady := IsNodeConditionUnset(node, api.NodeNetworkUnavailable) ||
-		IsNodeConditionSetAsExpectedSilent(node, api.NodeNetworkUnavailable, false)
+		IsNodeConditionSetAsExpected(node, api.NodeNetworkUnavailable, false)
 	return !node.Spec.Unschedulable && nodeReady && networkReady
 }
 
@@ -2624,7 +2625,7 @@ func GetReadySchedulableNodesOrDie(c *client.Client) (nodes *api.NodeList) {
 }
 
 func WaitForAllNodesSchedulable(c *client.Client) error {
-	return wait.PollImmediate(30*time.Second, 4*time.Hour, func() (bool, error) {
+	return wait.PollImmediate(30*time.Second, 2*time.Hour, func() (bool, error) {
 		opts := api.ListOptions{
 			ResourceVersion: "0",
 			FieldSelector:   fields.Set{"spec.unschedulable": "false"}.AsSelector(),
@@ -2635,15 +2636,10 @@ func WaitForAllNodesSchedulable(c *client.Client) error {
 			// Ignore the error here - it will be retried.
 			return false, nil
 		}
-		schedulable := 0
 		for _, node := range nodes.Items {
-			if isNodeSchedulable(&node) {
-				schedulable++
+			if !isNodeSchedulable(&node) {
+				return false, nil
 			}
-		}
-		if schedulable != len(nodes.Items) {
-			Logf("%d/%d nodes schedulable (polling after 30s)", schedulable, len(nodes.Items))
-			return false, nil
 		}
 		return true, nil
 	})
@@ -2879,12 +2875,6 @@ func WaitForDeploymentStatus(c clientset.Interface, ns, deploymentName string, d
 			return false, nil
 		}
 		allRSs = append(oldRSs, newRS)
-		// The old/new ReplicaSets need to contain the pod-template-hash label
-		for i := range allRSs {
-			if !labelsutil.SelectorHasLabel(allRSs[i].Spec.Selector, extensions.DefaultDeploymentUniqueLabelKey) {
-				return false, nil
-			}
-		}
 		totalCreated := deploymentutil.GetReplicaCountForReplicaSets(allRSs)
 		totalAvailable, err := deploymentutil.GetAvailablePodsForReplicaSets(c, allRSs, minReadySeconds)
 		if err != nil {
@@ -2970,9 +2960,8 @@ func WaitForDeploymentRevisionAndImage(c clientset.Interface, ns, deploymentName
 		if err != nil {
 			return false, err
 		}
-		// The new ReplicaSet needs to be non-nil and contain the pod-template-hash label
 		newRS, err = deploymentutil.GetNewReplicaSet(deployment, c)
-		if err != nil || newRS == nil || !labelsutil.SelectorHasLabel(newRS.Spec.Selector, extensions.DefaultDeploymentUniqueLabelKey) {
+		if err != nil {
 			return false, err
 		}
 		// Check revision of this deployment, and of the new replica set of this deployment
@@ -2985,9 +2974,6 @@ func WaitForDeploymentRevisionAndImage(c clientset.Interface, ns, deploymentName
 	})
 	if err == wait.ErrWaitTimeout {
 		logReplicaSetsOfDeployment(deployment, nil, newRS)
-	}
-	if newRS == nil {
-		return fmt.Errorf("deployment %s failed to create new RS: %v", deploymentName, err)
 	}
 	if err != nil {
 		return fmt.Errorf("error waiting for deployment %s (got %s / %s) and new RS %s (got %s / %s) revision and image to match expectation (expected %s / %s): %v", deploymentName, deployment.Annotations[deploymentutil.RevisionAnnotation], deployment.Spec.Template.Spec.Containers[0].Image, newRS.Name, newRS.Annotations[deploymentutil.RevisionAnnotation], newRS.Spec.Template.Spec.Containers[0].Image, revision, image, err)
@@ -3051,11 +3037,7 @@ func logReplicaSetsOfDeployment(deployment *extensions.Deployment, allOldRSs []*
 	for i := range allOldRSs {
 		Logf("All old ReplicaSets (%d/%d) of deployment %s: %+v. Selector = %+v", i+1, len(allOldRSs), deployment.Name, *allOldRSs[i], allOldRSs[i].Spec.Selector)
 	}
-	if newRS != nil {
-		Logf("New ReplicaSet of deployment %s: %+v. Selector = %+v", deployment.Name, *newRS, newRS.Spec.Selector)
-	} else {
-		Logf("New ReplicaSet of deployment %s is nil.", deployment.Name)
-	}
+	Logf("New ReplicaSet of deployment %s: %+v. Selector = %+v", deployment.Name, *newRS, newRS.Spec.Selector)
 }
 
 func WaitForObservedDeployment(c *clientset.Clientset, ns, deploymentName string, desiredGeneration int64) error {
@@ -3427,7 +3409,7 @@ func WaitForNodeToBeNotReady(c *client.Client, name string, timeout time.Duratio
 	return WaitForNodeToBe(c, name, api.NodeReady, false, timeout)
 }
 
-func isNodeConditionSetAsExpected(node *api.Node, conditionType api.NodeConditionType, wantTrue, silent bool) bool {
+func IsNodeConditionSetAsExpected(node *api.Node, conditionType api.NodeConditionType, wantTrue bool) bool {
 	// Check the node readiness condition (logging all).
 	for _, cond := range node.Status.Conditions {
 		// Ensure that the condition type and the status matches as desired.
@@ -3435,26 +3417,14 @@ func isNodeConditionSetAsExpected(node *api.Node, conditionType api.NodeConditio
 			if (cond.Status == api.ConditionTrue) == wantTrue {
 				return true
 			} else {
-				if !silent {
-					Logf("Condition %s of node %s is %v instead of %t. Reason: %v, message: %v",
-						conditionType, node.Name, cond.Status == api.ConditionTrue, wantTrue, cond.Reason, cond.Message)
-				}
+				Logf("Condition %s of node %s is %v instead of %t. Reason: %v, message: %v",
+					conditionType, node.Name, cond.Status == api.ConditionTrue, wantTrue, cond.Reason, cond.Message)
 				return false
 			}
 		}
 	}
-	if !silent {
-		Logf("Couldn't find condition %v on node %v", conditionType, node.Name)
-	}
+	Logf("Couldn't find condition %v on node %v", conditionType, node.Name)
 	return false
-}
-
-func IsNodeConditionSetAsExpected(node *api.Node, conditionType api.NodeConditionType, wantTrue bool) bool {
-	return isNodeConditionSetAsExpected(node, conditionType, wantTrue, false)
-}
-
-func IsNodeConditionSetAsExpectedSilent(node *api.Node, conditionType api.NodeConditionType, wantTrue bool) bool {
-	return isNodeConditionSetAsExpected(node, conditionType, wantTrue, true)
 }
 
 func IsNodeConditionUnset(node *api.Node, conditionType api.NodeConditionType) bool {

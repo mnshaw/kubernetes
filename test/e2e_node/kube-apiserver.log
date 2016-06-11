@@ -1,0 +1,632 @@
+Flag --kubelet-port has been deprecated, kubelet-port is deprecated and will be removed
+I0610 18:26:16.053336   42297 interface.go:248] Default route transits interface "em1"
+I0610 18:26:16.053962   42297 interface.go:93] Interface em1 is up
+I0610 18:26:16.054027   42297 interface.go:138] Interface "em1" has 10 addresses :[100.99.140.155/23 2620:0:1000:3012:3166:9a3e:e519:81eb/64 2620:0:1000:3012:4d5a:93cd:8b3:c78c/64 2620:0:1000:3012:38a0:c46b:88c5:1617/64 2620:0:1000:3012:8880:2ed9:c935:29f4/64 2620:0:1000:3012:8830:1d36:1861:4933/64 2620:0:1000:3012:4137:7427:adfb:9e1d/64 2620:0:1000:3012:a9e3:bb46:b5e8:6614/64 2620:0:1000:3012:6651:6ff:fe59:b8d8/64 fe80::6651:6ff:fe59:b8d8/64].
+I0610 18:26:16.054059   42297 interface.go:105] Checking addr  100.99.140.155/23.
+I0610 18:26:16.054068   42297 interface.go:114] IP found 100.99.140.155
+I0610 18:26:16.054079   42297 interface.go:144] valid IPv4 address for interface "em1" found as 100.99.140.155.
+I0610 18:26:16.054088   42297 interface.go:254] Choosing IP 100.99.140.155 
+I0610 18:26:16.054103   42297 genericapiserver.go:606] Will report 100.99.140.155 as public IP address.
+I0610 18:26:16.054332   42297 genericapiserver.go:275] Setting GenericAPIServer service IP to "10.0.0.1" (read-write).
+I0610 18:26:16.054346   42297 genericapiserver.go:288] Node port range unspecified. Defaulting to 30000-32767.
+I0610 18:26:16.059799   42297 storage_factory.go:216] storing { podTemplates} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.061524   42297 storage_factory.go:216] storing { events} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.061649   42297 storage_factory.go:216] storing { limitRanges} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.061752   42297 reflector.go:253] Listing and watching *api.PodTemplate from pkg/storage/cacher.go:164
+I0610 18:26:16.061912   42297 storage_factory.go:216] storing { resourceQuotas} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.062095   42297 reflector.go:253] Listing and watching *api.LimitRange from pkg/storage/cacher.go:164
+I0610 18:26:16.062162   42297 storage_factory.go:216] storing { secrets} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.062342   42297 reflector.go:253] Listing and watching *api.ResourceQuota from pkg/storage/cacher.go:164
+I0610 18:26:16.062437   42297 reflector.go:253] Listing and watching *api.Secret from pkg/storage/cacher.go:164
+I0610 18:26:16.062396   42297 storage_factory.go:216] storing { serviceAccounts} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.063186   42297 storage_factory.go:216] storing { persistentVolumes} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.063346   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.ResourceQuotaList
+I0610 18:26:16.063410   42297 storage_factory.go:216] storing { persistentVolumeClaims} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.063480   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.PodTemplateList
+I0610 18:26:16.063470   42297 reflector.go:253] Listing and watching *api.ServiceAccount from pkg/storage/cacher.go:164
+I0610 18:26:16.063581   42297 storage_factory.go:216] storing { configMaps} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.063648   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.LimitRangeList
+I0610 18:26:16.063724   42297 storage_factory.go:216] storing { namespaces} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.063777   42297 reflector.go:253] Listing and watching *api.PersistentVolumeClaim from pkg/storage/cacher.go:164
+I0610 18:26:16.063861   42297 storage_factory.go:216] storing { endpoints} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.063937   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.SecretList
+I0610 18:26:16.064027   42297 storage_factory.go:216] storing { nodes} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.064167   42297 reflector.go:253] Listing and watching *api.ConfigMap from pkg/storage/cacher.go:164
+I0610 18:26:16.064210   42297 reflector.go:253] Listing and watching *api.Namespace from pkg/storage/cacher.go:164
+I0610 18:26:16.064295   42297 storage_factory.go:216] storing { pods} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.064434   42297 reflector.go:253] Listing and watching *api.Endpoints from pkg/storage/cacher.go:164
+I0610 18:26:16.064540   42297 storage_factory.go:216] storing { services} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.064837   42297 reflector.go:253] Listing and watching *api.PersistentVolume from pkg/storage/cacher.go:164
+I0610 18:26:16.064915   42297 reflector.go:253] Listing and watching *api.Node from pkg/storage/cacher.go:164
+I0610 18:26:16.065458   42297 reflector.go:253] Listing and watching *api.Pod from pkg/storage/cacher.go:164
+I0610 18:26:16.066256   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.ServiceAccountList
+I0610 18:26:16.066509   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.PersistentVolumeClaimList
+I0610 18:26:16.066688   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.ConfigMapList
+I0610 18:26:16.066867   42297 reflector.go:253] Listing and watching *api.Service from pkg/storage/cacher.go:164
+I0610 18:26:16.066950   42297 storage_factory.go:216] storing { services} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.067752   42297 storage_factory.go:216] storing { replicationControllers} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.067920   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.PersistentVolumeList
+I0610 18:26:16.068179   42297 storage_factory.go:216] storing {extensions thirdpartyresources} in extensions/v1beta1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.068273   42297 reflector.go:253] Listing and watching *api.ReplicationController from pkg/storage/cacher.go:164
+I0610 18:26:16.068341   42297 storage_factory.go:216] storing {extensions horizontalpodautoscalers} in autoscaling/v1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.068450   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.NamespaceList
+I0610 18:26:16.068624   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.ServiceList
+I0610 18:26:16.068766   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.EndpointsList
+I0610 18:26:16.068844   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.PodList
+I0610 18:26:16.068880   42297 storage_factory.go:216] storing { replicationControllers} in v1, reading as __internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.068970   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.NodeList
+I0610 18:26:16.069080   42297 storage_factory.go:216] storing {extensions thirdpartyresources} in extensions/v1beta1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.069079   42297 reflector.go:253] Listing and watching *autoscaling.HorizontalPodAutoscaler from pkg/storage/cacher.go:164
+I0610 18:26:16.069209   42297 reflector.go:253] Listing and watching *api.ReplicationController from pkg/storage/cacher.go:164
+I0610 18:26:16.069264   42297 storage_factory.go:216] storing {extensions daemonsets} in extensions/v1beta1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.069406   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.ReplicationControllerList
+I0610 18:26:16.069625   42297 storage_factory.go:216] storing {extensions deployments} in extensions/v1beta1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.069758   42297 meta.go:42] Calling ListAccessor on non-internal object: *api.ReplicationControllerList
+I0610 18:26:16.069830   42297 reflector.go:253] Listing and watching *extensions.DaemonSet from pkg/storage/cacher.go:164
+I0610 18:26:16.069993   42297 meta.go:42] Calling ListAccessor on non-internal object: *autoscaling.HorizontalPodAutoscalerList
+I0610 18:26:16.070032   42297 reflector.go:253] Listing and watching *extensions.Deployment from pkg/storage/cacher.go:164
+I0610 18:26:16.069989   42297 storage_factory.go:216] storing {extensions jobs} in batch/v1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.070394   42297 meta.go:42] Calling ListAccessor on non-internal object: *extensions.DaemonSetList
+I0610 18:26:16.070714   42297 storage_factory.go:216] storing {extensions ingresses} in extensions/v1beta1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.070867   42297 reflector.go:253] Listing and watching *batch.Job from pkg/storage/cacher.go:164
+I0610 18:26:16.070968   42297 meta.go:42] Calling ListAccessor on non-internal object: *extensions.DeploymentList
+I0610 18:26:16.071158   42297 storage_factory.go:216] storing {extensions podsecuritypolicy} in extensions/v1beta1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.071326   42297 reflector.go:253] Listing and watching *extensions.Ingress from pkg/storage/cacher.go:164
+I0610 18:26:16.073302   42297 storage_factory.go:216] storing {extensions replicasets} in extensions/v1beta1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.073361   42297 meta.go:42] Calling ListAccessor on non-internal object: *batch.JobList
+I0610 18:26:16.073385   42297 reflector.go:253] Listing and watching *extensions.PodSecurityPolicy from pkg/storage/cacher.go:164
+I0610 18:26:16.073607   42297 meta.go:42] Calling ListAccessor on non-internal object: *extensions.IngressList
+I0610 18:26:16.073613   42297 storage_factory.go:216] storing {extensions networkpolicies} in extensions/v1beta1, reading as extensions/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.073612   42297 reflector.go:253] Listing and watching *extensions.ReplicaSet from pkg/storage/cacher.go:164
+I0610 18:26:16.073989   42297 storage_factory.go:216] storing {autoscaling horizontalpodautoscalers} in autoscaling/v1, reading as autoscaling/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.074213   42297 storage_factory.go:216] storing {batch jobs} in batch/v1, reading as batch/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.074410   42297 storage_factory.go:216] storing {policy poddisruptionbudgets} in policy/v1alpha1, reading as policy/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.074733   42297 storage_factory.go:216] storing {apps petsets} in apps/v1alpha1, reading as apps/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.075315   42297 reflector.go:253] Listing and watching *batch.Job from pkg/storage/cacher.go:164
+I0610 18:26:16.075372   42297 reflector.go:253] Listing and watching *extensions.NetworkPolicy from pkg/storage/cacher.go:164
+I0610 18:26:16.075311   42297 reflector.go:253] Listing and watching *autoscaling.HorizontalPodAutoscaler from pkg/storage/cacher.go:164
+I0610 18:26:16.075396   42297 reflector.go:253] Listing and watching *policy.PodDisruptionBudget from pkg/storage/cacher.go:164
+I0610 18:26:16.075816   42297 storage_factory.go:216] storing {rbac.authorization.k8s.io roles} in rbac.authorization.k8s.io/v1alpha1, reading as rbac.authorization.k8s.io/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.075941   42297 reflector.go:253] Listing and watching *apps.PetSet from pkg/storage/cacher.go:164
+I0610 18:26:16.076045   42297 meta.go:42] Calling ListAccessor on non-internal object: *extensions.PodSecurityPolicyList
+I0610 18:26:16.076143   42297 storage_factory.go:216] storing {rbac.authorization.k8s.io roles} in rbac.authorization.k8s.io/v1alpha1, reading as rbac.authorization.k8s.io/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.076173   42297 meta.go:42] Calling ListAccessor on non-internal object: *extensions.ReplicaSetList
+I0610 18:26:16.076204   42297 meta.go:42] Calling ListAccessor on non-internal object: *autoscaling.HorizontalPodAutoscalerList
+I0610 18:26:16.076290   42297 reflector.go:253] Listing and watching *rbac.Role from pkg/storage/cacher.go:164
+I0610 18:26:16.076352   42297 meta.go:42] Calling ListAccessor on non-internal object: *batch.JobList
+I0610 18:26:16.076400   42297 reflector.go:253] Listing and watching *rbac.Role from pkg/storage/cacher.go:164
+I0610 18:26:16.076334   42297 storage_factory.go:216] storing {rbac.authorization.k8s.io rolebindings} in rbac.authorization.k8s.io/v1alpha1, reading as rbac.authorization.k8s.io/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.076636   42297 storage_factory.go:216] storing {rbac.authorization.k8s.io clusterroles} in rbac.authorization.k8s.io/v1alpha1, reading as rbac.authorization.k8s.io/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.076731   42297 meta.go:42] Calling ListAccessor on non-internal object: *policy.PodDisruptionBudgetList
+I0610 18:26:16.076811   42297 storage_factory.go:216] storing {rbac.authorization.k8s.io clusterrolebindings} in rbac.authorization.k8s.io/v1alpha1, reading as rbac.authorization.k8s.io/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.076839   42297 meta.go:42] Calling ListAccessor on non-internal object: *apps.PetSetList
+I0610 18:26:16.076868   42297 reflector.go:253] Listing and watching *rbac.RoleBinding from pkg/storage/cacher.go:164
+I0610 18:26:16.077034   42297 storage_factory.go:216] storing {rbac.authorization.k8s.io rolebindings} in rbac.authorization.k8s.io/v1alpha1, reading as rbac.authorization.k8s.io/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.077036   42297 reflector.go:253] Listing and watching *rbac.ClusterRole from pkg/storage/cacher.go:164
+I0610 18:26:16.077150   42297 storage_factory.go:216] storing {rbac.authorization.k8s.io clusterroles} in rbac.authorization.k8s.io/v1alpha1, reading as rbac.authorization.k8s.io/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.077168   42297 meta.go:42] Calling ListAccessor on non-internal object: *rbac.RoleList
+I0610 18:26:16.077209   42297 meta.go:42] Calling ListAccessor on non-internal object: *extensions.NetworkPolicyList
+I0610 18:26:16.077246   42297 meta.go:42] Calling ListAccessor on non-internal object: *rbac.RoleList
+I0610 18:26:16.077289   42297 storage_factory.go:216] storing {rbac.authorization.k8s.io clusterrolebindings} in rbac.authorization.k8s.io/v1alpha1, reading as rbac.authorization.k8s.io/__internal from { /registry [http://127.0.0.1:4001]    false 50000}
+I0610 18:26:16.077324   42297 reflector.go:253] Listing and watching *rbac.RoleBinding from pkg/storage/cacher.go:164
+I0610 18:26:16.077149   42297 reflector.go:253] Listing and watching *rbac.ClusterRoleBinding from pkg/storage/cacher.go:164
+I0610 18:26:16.077501   42297 reflector.go:253] Listing and watching *rbac.ClusterRole from pkg/storage/cacher.go:164
+I0610 18:26:16.077787   42297 meta.go:42] Calling ListAccessor on non-internal object: *rbac.ClusterRoleList
+I0610 18:26:16.077874   42297 meta.go:42] Calling ListAccessor on non-internal object: *rbac.RoleBindingList
+I0610 18:26:16.077970   42297 meta.go:42] Calling ListAccessor on non-internal object: *rbac.RoleBindingList
+I0610 18:26:16.077723   42297 reflector.go:253] Listing and watching *rbac.ClusterRoleBinding from pkg/storage/cacher.go:164
+I0610 18:26:16.078726   42297 meta.go:42] Calling ListAccessor on non-internal object: *rbac.ClusterRoleBindingList
+I0610 18:26:16.079090   42297 meta.go:42] Calling ListAccessor on non-internal object: *rbac.ClusterRoleList
+I0610 18:26:16.079610   42297 meta.go:42] Calling ListAccessor on non-internal object: *rbac.ClusterRoleBindingList
+W0610 18:26:16.139890   42297 controller.go:277] Resetting endpoints for master service "kubernetes" to kind:"" apiVersion:"" 
+[restful] 2016/06/10 18:26:16 log.go:30: [restful/swagger] listing is available at https://100.99.140.155:6443/swaggerapi/
+[restful] 2016/06/10 18:26:16 log.go:30: [restful/swagger] https://100.99.140.155:6443/swaggerui/ is mapped to folder /swagger-ui/
+I0610 18:26:16.173043   42297 genericapiserver.go:690] Serving securely on 0.0.0.0:6443
+I0610 18:26:16.173098   42297 genericapiserver.go:753] using existing apiserver.crt and apiserver.key files
+I0610 18:26:16.173124   42297 genericapiserver.go:734] Serving insecurely on 0.0.0.0:8080
+I0610 18:26:16.460663   42297 handlers.go:165] GET /healthz: (132.502µs) 200 [[Go-http-client/1.1] 127.0.0.1:35587]
+I0610 18:26:17.625772   42297 meta.go:81] Calling Accessor on non-internal object: *api.ServiceList
+I0610 18:26:17.625826   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:17.625857   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:17.626187   42297 handlers.go:165] GET /api/v1/nodes?fieldSelector=metadata.name%3Dmnshaw.mtv.corp.google.com&resourceVersion=0: (1.935758ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35592]
+I0610 18:26:17.626368   42297 handlers.go:165] GET /api/v1/services?resourceVersion=0: (1.001904ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35593]
+I0610 18:26:17.626442   42297 handlers.go:165] GET /api/v1/pods?fieldSelector=spec.nodeName%3Dmnshaw.mtv.corp.google.com&resourceVersion=0: (908.973µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35595]
+I0610 18:26:17.725560   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (3.315468ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:17.849092   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (1.692304ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:17.854502   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (4.476515ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:17.855064   42297 handlers.go:165] POST /api/v1/nodes: (8.168827ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:17.857230   42297 handlers.go:165] GET /api/v1/nodes/mnshaw.mtv.corp.google.com: (1.278915ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:17.884929   42297 handlers.go:165] PUT /api/v1/nodes/mnshaw.mtv.corp.google.com/status: (4.121107ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:18.467390   42297 handlers.go:165] POST /api/v1/namespaces: (2.297979ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:18.469797   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:18.470041   42297 handlers.go:165] GET /api/v1/namespaces/kube-system/pods: (1.437641ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:18.472330   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:18.472728   42297 handlers.go:165] GET /api/v1/nodes: (1.446484ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:18.475503   42297 handlers.go:165] GET /version: (257.078µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:18.477408   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ed707/configmaps: (2.953792ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:18.479403   42297 round_trippers.go:296] POST https://100.99.140.155:10250/stats/container
+I0610 18:26:18.479435   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:18.479450   42297 round_trippers.go:306]     Content-Type: application/json
+I0610 18:26:18.479469   42297 round_trippers.go:306]     Accept-Encoding: gzip
+I0610 18:26:18.479482   42297 round_trippers.go:306]     X-Forwarded-Uri: /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container
+I0610 18:26:18.479493   42297 round_trippers.go:306]     User-Agent: e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format
+I0610 18:26:18.479504   42297 round_trippers.go:306]     Content-Length: 117
+I0610 18:26:18.479515   42297 round_trippers.go:306]     Accept: application/json, */*
+I0610 18:26:18.488621   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ed707/pods: (8.770226ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:18.491100   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.339181ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:18.541020   42297 round_trippers.go:321] Response Status: 200 OK in 61 milliseconds
+I0610 18:26:18.541048   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:18.541054   42297 round_trippers.go:327]     Content-Type: application/json
+I0610 18:26:18.541059   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:18 GMT
+I0610 18:26:18.541438   42297 handlers.go:165] POST /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container: (64.957017ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:20.494095   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.5836ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:22.496821   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.529449ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:22.726744   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.326829ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:22.728433   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/configmaps/configmap-test-volume-7f4aeeff-2f73-11e6-b9aa-64510659b8d8: (1.271414ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:22.731907   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8/status: (3.885227ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:22.743157   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ed707/events: (9.324295ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:22.757098   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (12.885325ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:23.047432   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ed707/events: (1.894493ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:23.048493   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:23.060878   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-ed707/events/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8.1456e30f18a60813: (12.727803ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:23.062468   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:23.073206   42297 handlers.go:165] PATCH /api/v1/namespaces/default/events/mnshaw.mtv.corp.google.com.1456e30f18a67f48: (11.057379ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:23.185436   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ed707/events: (2.212492ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:23.272622   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ed707/events: (1.358758ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:23.806567   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/configmaps/configmap-test-volume-7f4aeeff-2f73-11e6-b9aa-64510659b8d8: (1.588421ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:23.807036   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.905401ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:23.812700   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8/status: (4.083317ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.501089   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.677803ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.503294   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.089971ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.506212   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:24.506287   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-ed707/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:24.506302   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:24.517233   42297 round_trippers.go:321] Response Status: 200 OK in 10 milliseconds
+I0610 18:26:24.517264   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:24.517276   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:24 GMT
+I0610 18:26:24.517430   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (13.189973ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.522777   42297 store.go:665] going to delete pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:24.525198   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.213727ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.527809   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8/status: (1.749903ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.530533   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.753454ms) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.530570   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (12.513004ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.532458   42297 store.go:665] going to delete configmap-test-volume-7f4aeeff-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:24.536403   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-ed707/configmaps/configmap-test-volume-7f4aeeff-2f73-11e6-b9aa-64510659b8d8: (5.133171ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.537986   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:24.538316   42297 handlers.go:165] GET /api/v1/nodes: (1.28793ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.544533   42297 handlers.go:165] POST /api/v1/namespaces: (4.634448ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.545920   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:24.546109   42297 handlers.go:165] GET /api/v1/namespaces/kube-system/pods: (984.674µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.547766   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:24.548167   42297 handlers.go:165] GET /api/v1/nodes: (1.4484ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.549864   42297 handlers.go:165] GET /version: (176.503µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:24.552477   42297 round_trippers.go:296] POST https://100.99.140.155:10250/stats/container
+I0610 18:26:24.552494   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:24.552501   42297 round_trippers.go:306]     Content-Type: application/json
+I0610 18:26:24.552507   42297 round_trippers.go:306]     Accept-Encoding: gzip
+I0610 18:26:24.552512   42297 round_trippers.go:306]     X-Forwarded-Uri: /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container
+I0610 18:26:24.552518   42297 round_trippers.go:306]     User-Agent: e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format
+I0610 18:26:24.552524   42297 round_trippers.go:306]     Content-Length: 117
+I0610 18:26:24.552529   42297 round_trippers.go:306]     Accept: application/json, */*
+I0610 18:26:24.555703   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-urgjq/configmaps: (6.161663ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.562221   42297 round_trippers.go:321] Response Status: 200 OK in 9 milliseconds
+I0610 18:26:24.562255   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:24.562269   42297 round_trippers.go:327]     Content-Type: application/json
+I0610 18:26:24.562282   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:24 GMT
+I0610 18:26:24.562761   42297 handlers.go:165] POST /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container: (12.310224ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:24.563223   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-urgjq/pods: (6.933265ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.564843   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (1.069796ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:24.565936   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/configmaps/configmap-test-volume-82e9f092-2f73-11e6-b9aa-64510659b8d8: (809.191µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:24.566241   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (1.27956ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.570420   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8/status: (3.215393ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.578748   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-urgjq/events: (8.834734ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:24.596923   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (17.567625ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:24.868610   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/configmaps/configmap-test-volume-7f4aeeff-2f73-11e6-b9aa-64510659b8d8: (979.793µs) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:24.868901   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ed707/pods/pod-configmaps-7f4b8715-2f73-11e6-b9aa-64510659b8d8: (1.148786ms) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.870531   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-urgjq/events: (1.736846ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35608]
+I0610 18:26:24.871706   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:24.876097   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-urgjq/events/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8.1456e30f8616f189: (4.567005ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.876960   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:24.895064   42297 handlers.go:165] PATCH /api/v1/namespaces/default/events/mnshaw.mtv.corp.google.com.1456e30f8617627d: (18.227227ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.905856   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ed707/events: (10.013754ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:24.923454   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ed707/events: (17.113212ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:25.001916   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-urgjq/events: (10.796885ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:25.090980   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-urgjq/events: (1.810486ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:25.880796   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/configmaps/configmap-test-volume-82e9f092-2f73-11e6-b9aa-64510659b8d8: (1.636372ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:25.880803   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (1.790396ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:25.886129   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8/status: (4.161643ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:26.568034   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (1.91632ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.570635   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (1.457994ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.574021   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:26.574100   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-urgjq/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:26.574115   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:26.575881   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:26.575918   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:26.575934   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:26 GMT
+I0610 18:26:26.576105   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (4.379515ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.584039   42297 store.go:665] going to delete pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:26.588974   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (1.018857ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:26.589253   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (12.557569ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.590478   42297 store.go:665] going to delete configmap-test-volume-82e9f092-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:26.590996   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8/status: (985.219µs) 409 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:26.598936   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-urgjq/configmaps/configmap-test-volume-82e9f092-2f73-11e6-b9aa-64510659b8d8: (9.028985ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.600219   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:26.600512   42297 handlers.go:165] GET /api/v1/nodes: (1.065741ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.609054   42297 handlers.go:165] POST /api/v1/namespaces: (6.535766ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.610272   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:26.610351   42297 handlers.go:165] GET /api/v1/namespaces/kube-system/pods: (685.979µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.611521   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:26.611687   42297 handlers.go:165] GET /api/v1/nodes: (792.393µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.613135   42297 handlers.go:165] GET /version: (166.652µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:26.615938   42297 round_trippers.go:296] POST https://100.99.140.155:10250/stats/container
+I0610 18:26:26.615965   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:26.615977   42297 round_trippers.go:306]     X-Forwarded-Uri: /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container
+I0610 18:26:26.615987   42297 round_trippers.go:306]     User-Agent: e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format
+I0610 18:26:26.615997   42297 round_trippers.go:306]     Content-Length: 117
+I0610 18:26:26.616007   42297 round_trippers.go:306]     Accept: application/json, */*
+I0610 18:26:26.616016   42297 round_trippers.go:306]     Content-Type: application/json
+I0610 18:26:26.616026   42297 round_trippers.go:306]     Accept-Encoding: gzip
+I0610 18:26:26.616163   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-gmxc6/configmaps: (3.347243ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.620931   42297 round_trippers.go:321] Response Status: 200 OK in 4 milliseconds
+I0610 18:26:26.620958   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:26.620974   42297 round_trippers.go:327]     Content-Type: application/json
+I0610 18:26:26.620993   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:26 GMT
+I0610 18:26:26.621341   42297 handlers.go:165] POST /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container: (7.544067ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:26.621759   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods: (5.140626ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.623210   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8: (1.025797ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:26.624202   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/configmaps/configmap-test-volume-8424c4c8-2f73-11e6-b9aa-64510659b8d8: (739.938µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:26.624512   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8: (1.275878ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:26.632152   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-gmxc6/events: (3.569276ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:26.632650   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8/status: (6.85544ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:26.650456   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (17.867713ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:26.928514   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-gmxc6/events: (1.834131ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:26.929946   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:26.930484   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/configmaps/configmap-test-volume-82e9f092-2f73-11e6-b9aa-64510659b8d8: (790.679µs) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:26.931229   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (1.008473ms) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:26.935430   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-gmxc6/events/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8.1456e31000cfacfe: (5.873435ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35597]
+I0610 18:26:26.936932   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:26.953685   42297 handlers.go:165] PATCH /api/v1/namespaces/default/events/mnshaw.mtv.corp.google.com.1456e31000cfe569: (17.032514ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:26.964685   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-urgjq/events: (10.149028ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:26.981455   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-urgjq/events: (15.924ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:27.067333   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-gmxc6/events: (2.328167ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:27.138283   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-gmxc6/events: (1.479115ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:27.725741   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-urgjq/pods/pod-configmaps-82eaf7e2-2f73-11e6-b9aa-64510659b8d8: (1.168153ms) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:27.887798   42297 handlers.go:165] GET /api/v1/nodes/mnshaw.mtv.corp.google.com: (1.69078ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:27.917334   42297 handlers.go:165] PUT /api/v1/nodes/mnshaw.mtv.corp.google.com/status: (4.693777ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:27.938345   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/configmaps/configmap-test-volume-8424c4c8-2f73-11e6-b9aa-64510659b8d8: (1.177662ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:27.938488   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8: (1.44195ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:27.944090   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8/status: (3.920402ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.625903   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8: (1.562712ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.628254   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8: (1.243521ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.631183   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:28.631248   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-gmxc6/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:28.631262   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:28.632918   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:28.632949   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:28.632962   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:28 GMT
+I0610 18:26:28.633090   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (3.775078ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.636445   42297 store.go:665] going to delete pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:28.638273   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8: (775.041µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.640512   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8/status: (1.241591ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.643317   42297 store.go:665] going to delete pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:28.645350   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8: (11.79254ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.646581   42297 store.go:665] going to delete configmap-test-volume-8424c4c8-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:28.655474   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-gmxc6/configmaps/configmap-test-volume-8424c4c8-2f73-11e6-b9aa-64510659b8d8: (9.629656ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.655555   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-gmxc6/pods/pod-configmaps-84255b54-2f73-11e6-b9aa-64510659b8d8: (14.132495ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.656912   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:28.657227   42297 handlers.go:165] GET /api/v1/nodes: (1.10896ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.663378   42297 handlers.go:165] POST /api/v1/namespaces: (4.394903ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.664736   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:28.664803   42297 handlers.go:165] GET /api/v1/namespaces/kube-system/pods: (753.247µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.666237   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:28.666554   42297 handlers.go:165] GET /api/v1/nodes: (1.161537ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.668413   42297 handlers.go:165] GET /version: (167.252µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:28.669654   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-p8vk5/configmaps: (1.655188ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.671187   42297 round_trippers.go:296] POST https://100.99.140.155:10250/stats/container
+I0610 18:26:28.671221   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:28.671234   42297 round_trippers.go:306]     Content-Type: application/json
+I0610 18:26:28.671246   42297 round_trippers.go:306]     Accept-Encoding: gzip
+I0610 18:26:28.671257   42297 round_trippers.go:306]     X-Forwarded-Uri: /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container
+I0610 18:26:28.671269   42297 round_trippers.go:306]     User-Agent: e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format
+I0610 18:26:28.671280   42297 round_trippers.go:306]     Content-Length: 117
+I0610 18:26:28.671292   42297 round_trippers.go:306]     Accept: application/json, */*
+I0610 18:26:28.673725   42297 round_trippers.go:321] Response Status: 200 OK in 2 milliseconds
+I0610 18:26:28.673756   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:28.673769   42297 round_trippers.go:327]     Content-Type: application/json
+I0610 18:26:28.673781   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:28 GMT
+I0610 18:26:28.674182   42297 handlers.go:165] POST /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container: (5.198869ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:28.677927   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods: (7.435891ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.679418   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (792.912µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.679458   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/configmaps/configmap-test-volume-map-855e5bde-2f73-11e6-b9aa-64510659b8d8: (703.759µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:28.679598   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (1.181139ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:28.688680   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-p8vk5/events: (5.407473ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:28.689039   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8/status: (8.65379ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.699553   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (8.107839ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.985383   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-p8vk5/events: (2.119464ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.986830   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-gmxc6/configmaps/configmap-test-volume-8424c4c8-2f73-11e6-b9aa-64510659b8d8: (1.116888ms) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:28.986836   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:28.996941   42297 handlers.go:165] PATCH /api/v1/namespaces/default/events/mnshaw.mtv.corp.google.com.1456e3107b463ad2: (10.416149ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:28.997928   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:29.010994   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-p8vk5/events/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8.1456e3107b460662: (13.29184ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:29.023775   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-gmxc6/events: (11.810706ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:29.040094   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-gmxc6/events: (15.743051ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:29.130586   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-p8vk5/events: (1.799183ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:29.198236   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-p8vk5/events: (2.157882ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:29.996022   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/configmaps/configmap-test-volume-map-855e5bde-2f73-11e6-b9aa-64510659b8d8: (1.461927ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:29.996294   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (1.578823ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:30.001597   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8/status: (3.964002ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:30.682115   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (1.687375ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.684275   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (1.299536ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.687759   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:30.687860   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-p8vk5/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:30.687885   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:30.689573   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:30.689607   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:30.689622   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:30 GMT
+I0610 18:26:30.689781   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (4.473038ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.694461   42297 store.go:665] going to delete pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:30.697224   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (1.245899ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:30.700147   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8/status: (1.889184ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:30.701952   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (11.587533ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.701964   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (820.403µs) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:30.703447   42297 store.go:665] going to delete configmap-test-volume-map-855e5bde-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:30.712992   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-p8vk5/configmaps/configmap-test-volume-map-855e5bde-2f73-11e6-b9aa-64510659b8d8: (10.421817ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.714532   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:30.714923   42297 handlers.go:165] GET /api/v1/nodes: (1.367162ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.721553   42297 handlers.go:165] POST /api/v1/namespaces: (4.888446ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.723114   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:30.723289   42297 handlers.go:165] GET /api/v1/namespaces/kube-system/pods: (1.057756ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.724768   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:30.725088   42297 handlers.go:165] GET /api/v1/nodes: (1.273011ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.726659   42297 handlers.go:165] GET /version: (161.663µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:30.727896   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-omxcv/configmaps: (1.67443ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.729517   42297 round_trippers.go:296] POST https://100.99.140.155:10250/stats/container
+I0610 18:26:30.729548   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:30.729562   42297 round_trippers.go:306]     User-Agent: e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format
+I0610 18:26:30.729574   42297 round_trippers.go:306]     Content-Length: 117
+I0610 18:26:30.729585   42297 round_trippers.go:306]     Accept: application/json, */*
+I0610 18:26:30.729596   42297 round_trippers.go:306]     Content-Type: application/json
+I0610 18:26:30.729608   42297 round_trippers.go:306]     Accept-Encoding: gzip
+I0610 18:26:30.729619   42297 round_trippers.go:306]     X-Forwarded-Uri: /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container
+I0610 18:26:30.735259   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-omxcv/pods: (6.409528ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.736118   42297 round_trippers.go:321] Response Status: 200 OK in 6 milliseconds
+I0610 18:26:30.736161   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:30.736198   42297 round_trippers.go:327]     Content-Type: application/json
+I0610 18:26:30.736230   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:30 GMT
+I0610 18:26:30.736725   42297 handlers.go:165] POST /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container: (9.445739ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:30.737426   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8: (1.234116ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:30.738272   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8: (1.053565ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:30.738273   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/configmaps/configmap-test-volume-map-86986c4a-2f73-11e6-b9aa-64510659b8d8: (962.352µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:30.746433   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-omxcv/events: (4.166885ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:30.746667   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8/status: (7.216515ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:30.757909   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (9.663939ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:31.062652   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/configmaps/configmap-test-volume-map-855e5bde-2f73-11e6-b9aa-64510659b8d8: (854.819µs) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:31.062676   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-p8vk5/pods/pod-configmaps-855ebb5d-2f73-11e6-b9aa-64510659b8d8: (1.018697ms) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:31.065984   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-p8vk5/events: (1.917819ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:31.075996   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-p8vk5/events: (8.280142ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:31.088464   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-omxcv/events: (11.538674ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:31.089484   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:31.105369   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-omxcv/events/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8.1456e310f5fdce44: (16.111461ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:31.106013   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:31.118660   42297 handlers.go:165] PATCH /api/v1/namespaces/default/events/mnshaw.mtv.corp.google.com.1456e310f5fe316c: (12.790791ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:31.195264   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-omxcv/events: (1.433377ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:31.286605   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-omxcv/events: (2.059322ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:32.079007   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/configmaps/configmap-test-volume-map-86986c4a-2f73-11e6-b9aa-64510659b8d8: (1.055561ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:32.079409   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8: (1.608116ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:32.084880   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8/status: (4.227088ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:32.739880   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8: (1.608789ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.742588   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8: (1.423071ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.745985   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:32.746063   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-omxcv/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:32.746079   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:32.747727   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:32.747763   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:32.747777   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:32 GMT
+I0610 18:26:32.747983   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (4.302357ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.753173   42297 store.go:665] going to delete pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:32.756173   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8: (1.396048ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:32.759171   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8/status: (2.023192ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:32.762760   42297 store.go:665] going to delete pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:32.763505   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8: (3.355871ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:32.763658   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-omxcv/pods/pod-configmaps-8698cf9a-2f73-11e6-b9aa-64510659b8d8: (15.104617ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.765284   42297 store.go:665] going to delete configmap-test-volume-map-86986c4a-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:32.771406   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-omxcv/configmaps/configmap-test-volume-map-86986c4a-2f73-11e6-b9aa-64510659b8d8: (6.961787ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.773146   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:32.773401   42297 handlers.go:165] GET /api/v1/nodes: (1.366811ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.777411   42297 handlers.go:165] POST /api/v1/namespaces: (2.346832ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.778606   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:32.778771   42297 handlers.go:165] GET /api/v1/namespaces/kube-system/pods: (861.991µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.780442   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:32.780790   42297 handlers.go:165] GET /api/v1/nodes: (1.37237ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.782459   42297 handlers.go:165] GET /version: (243.51µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:32.785324   42297 round_trippers.go:296] POST https://100.99.140.155:10250/stats/container
+I0610 18:26:32.785356   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:32.785368   42297 round_trippers.go:306]     X-Forwarded-Uri: /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container
+I0610 18:26:32.785379   42297 round_trippers.go:306]     User-Agent: e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format
+I0610 18:26:32.785412   42297 round_trippers.go:306]     Content-Length: 117
+I0610 18:26:32.785424   42297 round_trippers.go:306]     Accept: application/json, */*
+I0610 18:26:32.785433   42297 round_trippers.go:306]     Content-Type: application/json
+I0610 18:26:32.785443   42297 round_trippers.go:306]     Accept-Encoding: gzip
+I0610 18:26:32.786334   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ehqg5/configmaps: (4.283925ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.793651   42297 round_trippers.go:321] Response Status: 200 OK in 8 milliseconds
+I0610 18:26:32.793680   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:32.793696   42297 round_trippers.go:327]     Content-Type: application/json
+I0610 18:26:32.793710   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:32 GMT
+I0610 18:26:32.794171   42297 handlers.go:165] POST /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container: (11.05091ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:32.796811   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods: (9.155958ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.798075   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (712.487µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:32.798782   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (995.851µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:32.798818   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/configmaps/configmap-test-volume-map-87d21d6a-2f73-11e6-b9aa-64510659b8d8: (576.349µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:32.804352   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8/status: (4.684423ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:32.804769   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ehqg5/events: (3.001075ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:32.810709   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (5.323321ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:33.121240   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ehqg5/events: (1.682646ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:33.123234   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:33.123459   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-omxcv/configmaps/configmap-test-volume-map-86986c4a-2f73-11e6-b9aa-64510659b8d8: (787.311µs) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:33.127670   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-ehqg5/events/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8.1456e31170c2fc7a: (4.574134ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:33.129093   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:33.138821   42297 handlers.go:165] PATCH /api/v1/namespaces/default/events/mnshaw.mtv.corp.google.com.1456e31170c316b4: (9.993142ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:33.156611   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-omxcv/events: (16.970359ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:33.170020   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-omxcv/events: (12.787352ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:33.246423   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ehqg5/events: (1.806993ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:33.318403   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ehqg5/events: (1.963601ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:34.200429   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/configmaps/configmap-test-volume-map-87d21d6a-2f73-11e6-b9aa-64510659b8d8: (1.442555ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:34.200690   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (1.515259ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:34.205987   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8/status: (4.194254ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:34.800413   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (1.638872ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.803012   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (1.485504ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.806103   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:34.806174   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-ehqg5/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:34.806189   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:34.807563   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:34.807594   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:34.807608   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:34 GMT
+I0610 18:26:34.807762   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (3.924554ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.812661   42297 store.go:665] going to delete pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:34.815471   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (1.393609ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:34.818394   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8/status: (1.948721ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:34.820315   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (852.434µs) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:34.820607   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (12.309202ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.822186   42297 store.go:665] going to delete configmap-test-volume-map-87d21d6a-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:34.826124   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-ehqg5/configmaps/configmap-test-volume-map-87d21d6a-2f73-11e6-b9aa-64510659b8d8: (4.682475ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.827679   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:34.827984   42297 handlers.go:165] GET /api/v1/nodes: (1.23787ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.835205   42297 handlers.go:165] POST /api/v1/namespaces: (5.564203ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.836573   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:34.836724   42297 handlers.go:165] GET /api/v1/namespaces/kube-system/pods: (843.074µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.838257   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:34.838582   42297 handlers.go:165] GET /api/v1/nodes: (1.226861ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.840292   42297 handlers.go:165] GET /version: (177.212µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:34.843054   42297 round_trippers.go:296] POST https://100.99.140.155:10250/stats/container
+I0610 18:26:34.843091   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:34.843105   42297 round_trippers.go:306]     X-Forwarded-Uri: /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container
+I0610 18:26:34.843117   42297 round_trippers.go:306]     User-Agent: e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format
+I0610 18:26:34.843129   42297 round_trippers.go:306]     Content-Length: 117
+I0610 18:26:34.843140   42297 round_trippers.go:306]     Accept: application/json, */*
+I0610 18:26:34.843151   42297 round_trippers.go:306]     Content-Type: application/json
+I0610 18:26:34.843163   42297 round_trippers.go:306]     Accept-Encoding: gzip
+I0610 18:26:34.845586   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-jehc1/configmaps: (5.679045ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.849965   42297 round_trippers.go:321] Response Status: 200 OK in 6 milliseconds
+I0610 18:26:34.849996   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:34.850009   42297 round_trippers.go:327]     Content-Type: application/json
+I0610 18:26:34.850022   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:34 GMT
+I0610 18:26:34.850572   42297 handlers.go:165] POST /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container: (9.661292ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:34.853553   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-jehc1/pods: (7.244873ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:34.855753   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8: (897.192µs) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:34.856216   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/configmaps/configmap-test-upd-890c1dd6-2f73-11e6-b9aa-64510659b8d8: (1.127995ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:34.860537   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/status: (3.460859ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:34.868108   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-jehc1/events: (8.456161ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:34.885899   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (17.213873ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:35.174099   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-jehc1/events: (2.08761ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:35.175953   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:35.183118   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-jehc1/events/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8.1456e311eb66bcff: (7.570811ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:35.189801   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:35.193874   42297 handlers.go:165] PATCH /api/v1/namespaces/default/events/mnshaw.mtv.corp.google.com.1456e311eb66fb75: (4.384865ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:35.242410   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/pods/pod-configmaps-87d2f322-2f73-11e6-b9aa-64510659b8d8: (816.815µs) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:35.242720   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-ehqg5/configmaps/configmap-test-volume-map-87d21d6a-2f73-11e6-b9aa-64510659b8d8: (1.002279ms) 404 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:35.244976   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ehqg5/events: (1.501728ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:35.250640   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-ehqg5/events: (5.181642ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:35.316146   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-jehc1/events: (1.970326ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:35.394337   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-jehc1/events: (2.021645ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:36.259009   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/configmaps/configmap-test-upd-890c1dd6-2f73-11e6-b9aa-64510659b8d8: (1.231767ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:36.259524   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8: (1.592374ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:36.263840   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/status: (3.418958ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:36.265144   42297 handlers.go:165] GET /api/v1/watch/namespaces/e2e-tests-configmap-jehc1/pods?fieldSelector=metadata.name%3Dpod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8: (1.410620416s) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35603]
+I0610 18:26:36.267640   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:36.267725   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-jehc1/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:36.267764   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:36.269052   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:36.269091   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:36.269107   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:36 GMT
+I0610 18:26:36.269281   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (4.114362ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:36.272781   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-jehc1/configmaps/configmap-test-upd-890c1dd6-2f73-11e6-b9aa-64510659b8d8: (2.8457ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:36.282355   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:36.282441   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-jehc1/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:36.282457   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:36.284002   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:36.284043   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:36.284058   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:36 GMT
+I0610 18:26:36.284275   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (10.715127ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:37.263553   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/configmaps/configmap-test-upd-890c1dd6-2f73-11e6-b9aa-64510659b8d8: (1.381602ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:37.263719   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8: (1.701187ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:37.269209   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/status: (4.421589ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:37.920677   42297 handlers.go:165] GET /api/v1/nodes/mnshaw.mtv.corp.google.com: (1.788772ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:37.969722   42297 handlers.go:165] PUT /api/v1/nodes/mnshaw.mtv.corp.google.com/status: (4.936528ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.287788   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:38.287867   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-jehc1/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/configmap-volume-test
+I0610 18:26:38.287883   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:38.289367   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:38.289410   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:38.289434   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:38 GMT
+I0610 18:26:38.289624   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/log?container=configmap-volume-test&previous=false: (4.47859ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.295164   42297 store.go:665] going to delete pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:38.298491   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8: (1.539521ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.301678   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8/status: (2.108656ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.306410   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-jehc1/pods/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8: (16.049515ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.308565   42297 store.go:665] going to delete configmap-test-upd-890c1dd6-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:38.314971   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-jehc1/configmaps/configmap-test-upd-890c1dd6-2f73-11e6-b9aa-64510659b8d8: (7.629352ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.316705   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:38.317065   42297 handlers.go:165] GET /api/v1/nodes: (1.426602ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.321059   42297 handlers.go:165] POST /api/v1/namespaces: (2.226931ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.322666   42297 meta.go:81] Calling Accessor on non-internal object: *api.PodList
+I0610 18:26:38.322854   42297 handlers.go:165] GET /api/v1/namespaces/kube-system/pods: (1.04386ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.324495   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:38.324817   42297 handlers.go:165] GET /api/v1/nodes: (1.312149ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.327004   42297 handlers.go:165] GET /version: (217.515µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35615]
+I0610 18:26:38.328722   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-aqw61/configmaps: (2.569487ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.329982   42297 round_trippers.go:296] POST https://100.99.140.155:10250/stats/container
+I0610 18:26:38.330020   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:38.330035   42297 round_trippers.go:306]     Accept-Encoding: gzip
+I0610 18:26:38.330047   42297 round_trippers.go:306]     X-Forwarded-Uri: /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container
+I0610 18:26:38.330059   42297 round_trippers.go:306]     User-Agent: e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format
+I0610 18:26:38.330071   42297 round_trippers.go:306]     Content-Length: 117
+I0610 18:26:38.330082   42297 round_trippers.go:306]     Accept: application/json, */*
+I0610 18:26:38.330093   42297 round_trippers.go:306]     Content-Type: application/json
+I0610 18:26:38.339472   42297 round_trippers.go:321] Response Status: 200 OK in 9 milliseconds
+I0610 18:26:38.339496   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:38.339506   42297 round_trippers.go:327]     Content-Type: application/json
+I0610 18:26:38.339514   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:38 GMT
+I0610 18:26:38.339945   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-aqw61/pods: (10.330054ms) 201 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.339986   42297 handlers.go:165] POST /api/v1/nodes/mnshaw.mtv.corp.google.com:10250/proxy/stats/container: (12.361287ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35615]
+I0610 18:26:38.341629   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (1.142624ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:38.342149   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (1.157051ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.348423   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-aqw61/events: (5.13699ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:38.348653   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8/status: (5.670376ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.361551   42297 handlers.go:165] POST /api/v1/namespaces/default/events: (12.459394ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:38.375089   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-jehc1/events: (12.753475ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:38.376473   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:38.387099   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-jehc1/events/pod-configmaps-890d1853-2f73-11e6-b9aa-64510659b8d8.1456e312bbaab79b: (10.921114ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:38.713439   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/configmaps/configmap-test-8b2012c5-2f73-11e6-b9aa-64510659b8d8: (1.305198ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35609]
+I0610 18:26:38.713797   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-aqw61/events: (1.413256ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.715392   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:38.723919   42297 handlers.go:165] PATCH /api/v1/namespaces/default/events/mnshaw.mtv.corp.google.com.1456e312bb0dc859: (8.963333ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.725543   42297 meta.go:81] Calling Accessor on non-internal object: <nil>
+I0610 18:26:38.735841   42297 handlers.go:165] PATCH /api/v1/namespaces/e2e-tests-configmap-aqw61/events/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8.1456e312bb0d87f3: (10.631979ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.853133   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-aqw61/events: (2.066429ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:38.929131   42297 handlers.go:165] POST /api/v1/namespaces/e2e-tests-configmap-aqw61/events: (1.261305ms) 201 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:39.283787   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (1.624163ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:39.288295   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8/status: (3.720167ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:40.296061   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (1.759298ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:40.299999   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8/status: (3.358835ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:40.343963   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (1.368191ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:40.346157   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (1.114094ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:40.349548   42297 meta.go:81] Calling Accessor on non-internal object: *rest.LocationStreamer
+I0610 18:26:40.349614   42297 round_trippers.go:296] GET https://mnshaw.mtv.corp.google.com:10250/containerLogs/e2e-tests-configmap-aqw61/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8/env-test
+I0610 18:26:40.349628   42297 round_trippers.go:303] Request Headers:
+I0610 18:26:40.351254   42297 round_trippers.go:321] Response Status: 200 OK in 1 milliseconds
+I0610 18:26:40.351289   42297 round_trippers.go:324] Response Headers:
+I0610 18:26:40.351302   42297 round_trippers.go:327]     Date: Sat, 11 Jun 2016 01:26:40 GMT
+I0610 18:26:40.351772   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8/log?container=env-test&previous=false: (4.179766ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:40.356478   42297 store.go:665] going to delete pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:40.358542   42297 handlers.go:165] GET /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (1.065467ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:40.361141   42297 handlers.go:165] PUT /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8/status: (1.67011ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:40.363990   42297 store.go:665] going to delete pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:40.365360   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (13.044862ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:40.366877   42297 store.go:665] going to delete configmap-test-8b2012c5-2f73-11e6-b9aa-64510659b8d8 from regitry: 
+I0610 18:26:40.370994   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-aqw61/pods/pod-configmaps-8b209756-2f73-11e6-b9aa-64510659b8d8: (8.877578ms) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35599]
+I0610 18:26:40.371060   42297 handlers.go:165] DELETE /api/v1/namespaces/e2e-tests-configmap-aqw61/configmaps/configmap-test-8b2012c5-2f73-11e6-b9aa-64510659b8d8: (5.005546ms) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:40.372177   42297 meta.go:81] Calling Accessor on non-internal object: *api.NodeList
+I0610 18:26:40.372418   42297 handlers.go:165] GET /api/v1/nodes: (834.556µs) 200 [[e2e_node.test/v0.0.0 (linux/amd64) kubernetes/$Format] 127.0.0.1:35601]
+I0610 18:26:40.492381   42297 handlers.go:165] GET /api/v1/watch/nodes?fieldSelector=metadata.name%3Dmnshaw.mtv.corp.google.com&timeoutSeconds=515: (22.864175519s) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35592]
+I0610 18:26:40.492424   42297 handlers.go:165] GET /api/v1/watch/pods?fieldSelector=spec.nodeName%3Dmnshaw.mtv.corp.google.com&resourceVersion=3&timeoutSeconds=444: (22.863729758s) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35596]
+I0610 18:26:40.492605   42297 handlers.go:165] GET /api/v1/watch/services?resourceVersion=7&timeoutSeconds=589: (22.864755046s) 200 [[kubelet/v1.3.0 (linux/amd64) kubernetes/60c1ec8] 127.0.0.1:35593]
