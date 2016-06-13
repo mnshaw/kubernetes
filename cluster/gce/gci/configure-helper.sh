@@ -721,14 +721,14 @@ function start-kube-addons {
     local -r file_dir="cluster-monitoring/${ENABLE_CLUSTER_MONITORING}"
     setup-addon-manifests "addons" "${file_dir}"
     # Replace the salt configurations with variable values.
-    base_metrics_memory="200Mi"
+    base_metrics_memory="140Mi"
     metrics_memory="${base_metrics_memory}"
-    base_eventer_memory="200Mi"
+    base_eventer_memory="190Mi"
     eventer_memory="${base_eventer_memory}"
     local -r metrics_memory_per_node="4"
     local -r eventer_memory_per_node="500"
     if [[ -n "${NUM_NODES:-}" && "${NUM_NODES}" -ge 1 ]]; then
-      num_kube_nodes="$((${NUM_NODES}-1))"
+      num_kube_nodes="$((${NUM_NODES}+1))"
       metrics_memory="$((${num_kube_nodes} * ${metrics_memory_per_node} + 200))Mi"
       eventer_memory="$((${num_kube_nodes} * ${eventer_memory_per_node} + 200 * 1024))Ki"
     fi
@@ -779,10 +779,6 @@ function start-kube-addons {
   fi
   if [[ "${ENABLE_NODE_PROBLEM_DETECTOR:-}" == "true" ]]; then
     setup-addon-manifests "addons" "node-problem-detector"
-    local -r node_problem_detector_file="${dst_dir}/node-problem-detector/node-problem-detector.yaml"
-    mv "${dst_dir}/node-problem-detector/node-problem-detector.yaml.in" "${node_problem_detector_file}"
-    # Replace the salt configurations with variable values.
-    sed -i -e "s@{{ *pillar\['master_node'\] *}}@${MASTER_NAME}@g" "${node_problem_detector_file}"
   fi
   if echo "${ADMISSION_CONTROL:-}" | grep -q "LimitRanger"; then
     setup-addon-manifests "admission-controls" "limit-range"

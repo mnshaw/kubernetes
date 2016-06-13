@@ -37,6 +37,7 @@ import (
 	"sync"
 	"time"
 
+	"k8s.io/kubernetes/federation/client/clientset_generated/federation_internalclientset"
 	unversionedfederation "k8s.io/kubernetes/federation/client/clientset_generated/federation_internalclientset/typed/federation/unversioned"
 	"k8s.io/kubernetes/pkg/api"
 	apierrs "k8s.io/kubernetes/pkg/api/errors"
@@ -1631,6 +1632,32 @@ func loadClientFromConfig(config *restclient.Config) (*client.Client, error) {
 	return c, nil
 }
 
+func loadFederationClientsetFromConfig(config *restclient.Config) (*federation_internalclientset.Clientset, error) {
+	c, err := federation_internalclientset.NewForConfig(config)
+	if err != nil {
+		return nil, fmt.Errorf("error creating federation clientset: %v", err.Error())
+	}
+	// Set timeout for each client in the set.
+	if c.DiscoveryClient.Client.Timeout == 0 {
+		c.DiscoveryClient.Client.Timeout = SingleCallTimeout
+	}
+	if c.FederationClient.Client.Timeout == 0 {
+		c.FederationClient.Client.Timeout = SingleCallTimeout
+	}
+	if c.CoreClient.Client.Timeout == 0 {
+		c.CoreClient.Client.Timeout = SingleCallTimeout
+	}
+	return c, nil
+}
+
+func LoadFederationClientset() (*federation_internalclientset.Clientset, error) {
+	config, err := LoadFederatedConfig()
+	if err != nil {
+		return nil, fmt.Errorf("error creating federated client config: %v", err.Error())
+	}
+	return loadFederationClientsetFromConfig(config)
+}
+
 func loadFederationClientFromConfig(config *restclient.Config) (*unversionedfederation.FederationClient, error) {
 	c, err := unversionedfederation.NewForConfig(config)
 	if err != nil {
@@ -1840,8 +1867,31 @@ func (b kubectlBuilder) WithStdinReader(reader io.Reader) *kubectlBuilder {
 func (b kubectlBuilder) ExecOrDie() string {
 	str, err := b.Exec()
 	Logf("stdout: %q", str)
+	// In case of i/o timeout error, try talking to the apiserver again after 2s before dying.
+	// Note that we're still dying after retrying so that we can get visibility to triage it further.
+	if isTimeout(err) {
+		Logf("Hit i/o timeout error, talking to the server 2s later to see if it's temporary.")
+		time.Sleep(2 * time.Second)
+		retryStr, retryErr := RunKubectl("version")
+		Logf("stdout: %q", retryStr)
+		Logf("err: %v", retryErr)
+	}
 	Expect(err).NotTo(HaveOccurred())
 	return str
+}
+
+func isTimeout(err error) bool {
+	switch err := err.(type) {
+	case net.Error:
+		if err.Timeout() {
+			return true
+		}
+	case *url.Error:
+		if err, ok := err.Err.(net.Error); ok && err.Timeout() {
+			return true
+		}
+	}
+	return false
 }
 
 func (b kubectlBuilder) Exec() (string, error) {
@@ -2876,18 +2926,18 @@ func WaitForDeploymentStatus(c clientset.Interface, ns, deploymentName string, d
 		}
 		allRSs = append(oldRSs, newRS)
 		totalCreated := deploymentutil.GetReplicaCountForReplicaSets(allRSs)
-		totalAvailable, err := deploymentutil.GetAvailablePodsForReplicaSets(c, allRSs, minReadySeconds)
+		totalAvailable, err := deploymentutil.GetAvailablePodsForDeployment(c, deployment, minReadySeconds)
 		if err != nil {
 			return false, err
 		}
 		if totalCreated > maxCreated {
 			logReplicaSetsOfDeployment(deployment, allOldRSs, newRS)
-			logPodsOfReplicaSets(c, allRSs, minReadySeconds)
+			logPodsOfDeployment(c, deployment, minReadySeconds)
 			return false, fmt.Errorf("total pods created: %d, more than the max allowed: %d", totalCreated, maxCreated)
 		}
 		if totalAvailable < minAvailable {
 			logReplicaSetsOfDeployment(deployment, allOldRSs, newRS)
-			logPodsOfReplicaSets(c, allRSs, minReadySeconds)
+			logPodsOfDeployment(c, deployment, minReadySeconds)
 			return false, fmt.Errorf("total pods available: %d, less than the min required: %d", totalAvailable, minAvailable)
 		}
 
@@ -2903,7 +2953,7 @@ func WaitForDeploymentStatus(c clientset.Interface, ns, deploymentName string, d
 
 	if err == wait.ErrWaitTimeout {
 		logReplicaSetsOfDeployment(deployment, allOldRSs, newRS)
-		logPodsOfReplicaSets(c, allRSs, minReadySeconds)
+		logPodsOfDeployment(c, deployment, minReadySeconds)
 	}
 	if err != nil {
 		return fmt.Errorf("error waiting for deployment %s status to match expectation: %v", deploymentName, err)
@@ -3044,10 +3094,17 @@ func WaitForObservedDeployment(c *clientset.Clientset, ns, deploymentName string
 	return deploymentutil.WaitForObservedDeployment(func() (*extensions.Deployment, error) { return c.Extensions().Deployments(ns).Get(deploymentName) }, desiredGeneration, Poll, 1*time.Minute)
 }
 
-func logPodsOfReplicaSets(c clientset.Interface, rss []*extensions.ReplicaSet, minReadySeconds int32) {
-	allPods, err := deploymentutil.GetPodsForReplicaSets(c, rss)
+func logPodsOfDeployment(c clientset.Interface, deployment *extensions.Deployment, minReadySeconds int32) {
+	podList, err := deploymentutil.ListPods(deployment,
+		func(namespace string, options api.ListOptions) (*api.PodList, error) {
+			return c.Core().Pods(namespace).List(options)
+		})
+	if err != nil {
+		Logf("Failed to list pods of deployment %s: %v", deployment.Name, err)
+		return
+	}
 	if err == nil {
-		for _, pod := range allPods {
+		for _, pod := range podList.Items {
 			availability := "not available"
 			if deploymentutil.IsPodAvailable(&pod, minReadySeconds) {
 				availability = "available"
